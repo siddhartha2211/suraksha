@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quiz.css">
+    <title>Quiz App</title>
+</head>
+<body>
+    <div id="question-container"></div>
+    <button id="next-button">Next</button>
+    <audio id="text-to-speech"></audio>
+
+    <script>
+        const quizData = [
+            {
+                question: "What is a good touch?",
+                options: [
+                    "A friendly high-five",
+                    "Pulling someone's hair",
+                    "Taking someone's toy without asking"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "What should you do if you feel uncomfortable with a touch?",
+                options: [
+                    "Keep it to yourself",
+                    "Tell a trusted adult",
+                    "Ignore it and walk away"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Which of the following is a bad touch?",
+                options: [
+                    "A warm hug from a family member",
+                    "Someone touching your private parts",
+                    "Shaking hands with a friend"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Who can you talk to if you experience a bad touch?",
+                options: [
+                    "Your favorite toy",
+                    "A teacher or a trusted adult",
+                    "No one, just forget about it"
+                ],
+                correctAnswer: 1
+            },
+            // Add more questions as needed
+        ];
+
+        const questionContainer = document.getElementById("question-container");
+        const nextButton = document.getElementById("next-button");
+        const textToSpeech = document.getElementById("text-to-speech");
+
+        let currentQuestion = 0;
+
+        function loadQuestion() {
+            const currentQuizData = quizData[currentQuestion];
+            questionContainer.innerHTML = `<h2>${currentQuizData.question}</h2>`;
+
+            currentQuizData.options.forEach((option, index) => {
+                questionContainer.innerHTML += `<label><input type="radio" name="answer" value="${index}"> ${option}</label><br>`;
+            });
+        }
+
+        function checkAnswer() {
+            const answerElements = document.querySelectorAll('input[name="answer"]');
+            let userAnswer;
+
+            answerElements.forEach((element) => {
+                if (element.checked) {
+                    userAnswer = parseInt(element.value);
+                }
+            });
+
+            if (userAnswer === undefined) {
+                alert("Please select an answer");
+                return false;
+            }
+
+            return userAnswer === quizData[currentQuestion].correctAnswer;
+        }
+
+        function nextQuestion() {
+            if (checkAnswer()) {
+                currentQuestion++;
+
+                if (currentQuestion < quizData.length) {
+                    loadQuestion();
+                } else {
+                    alert("Quiz completed!");
+                    // You can redirect to a different page or perform other actions here
+                }
+            }
+        }
+
+        loadQuestion();
+
+        nextButton.addEventListener("click", nextQuestion);
+    </script>
+</body>
+</html>

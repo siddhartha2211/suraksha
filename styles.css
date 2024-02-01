@@ -1,0 +1,71 @@
+.logo{
+    width: 150px;
+    height: 150px;
+}
+.h_buttons{
+    display: flex;
+    justify-content: center;
+}
+.but{
+    margin-left: 20px;
+    margin-right: 20px;
+    background: transparent;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+}
+.but:hover{
+    cursor: pointer;
+    border: 1px solid black;
+    color: black;
+}
+.background{
+    background-color: palegoldenrod;
+    width: auto;
+    height: auto;
+}
+.exp{
+    width: 90px;
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 400px;
+    margin-bottom: 0px;
+}
+.arrow{
+    margin-left: 40px;
+    margin-top: 0%;
+    margin-bottom: 0px;
+}
+.name{
+    margin-left: 20px;
+    display: inline;
+    font-size: 50px;
+}
+.img1{
+    border-radius: 10px;
+}
+.exp_s1{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 80px;
+}
+.exp_s2{
+    display: flex;
+    justify-content: space-around;
+}
+.exp_back{
+    background-color: wheat;
+    border: 3px solid yellowgreen;
+}
+.exp_down{
+    margin-top: none;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+.news_down{
+    text-align: center;
+}

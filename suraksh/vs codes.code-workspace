@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "demo",
+			"path": "../javapro/demo"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "suraksh",
+		"sqltools.connections": [
+			{
+				"mysqlOptions": {
+					"authProtocol": "xprotocol",
+					"enableSsl": "Disabled",
+					"ssl": {}
+				},
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 3306,
+				"driver": "MySQL",
+				"name": "MySQLlocal",
+				"database": "dbmsproject",
+				"username": "admin",
+				"password": "6261",
+				"connectionTimeout": 50
+			}
+		],
+		"maven.view": "flat"
+	}
+}
